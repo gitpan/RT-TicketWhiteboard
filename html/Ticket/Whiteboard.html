@@ -1,0 +1,35 @@
+<%args>
+$id => undef
+</%args>
+<%init>
+my $ticket = RT::Ticket->new($session{'CurrentUser'});
+$ticket->Load($id);
+
+ProcessObjectCustomFieldUpdates(Object => $ticket, ARGSRef => \%ARGS);
+
+
+my $whiteboard = $ticket->QueueObj->CustomField('Whiteboard');
+
+my $Values = $ticket->CustomFieldValues($whiteboard->Id);
+my $comp = "/Elements/ShowCustomField".$whiteboard->Type;
+
+</%init>
+<html><head>
+<link rel="stylesheet" 
+      href="<%$RT::WebPath%>/NoAuth/webrt.css" 
+      type="text/css" />
+</head>
+<body>
+% while (my $Value = $Values->Next()) {
+% if ($m->comp_exists($comp)) {
+<& $comp, Object => $Value &>
+% } else {
+<% $Value->Content %>
+% }
+% }
+% if ($whiteboard->CurrentUserHasRight('ModifyCustomField')) {
+<hr/><a align="right" valign="bottom" href="<%$RT::WebPath%>/Ticket/EditWhiteboard.html?id=<%$ticket->id%>">Edit whiteboard...</a>
+%}
+</body>
+</html>
+%$m->abort();

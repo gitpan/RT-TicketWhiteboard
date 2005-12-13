@@ -1,0 +1,35 @@
+<%args>
+$id => undef
+</%args>
+<%init>
+my $ticket = RT::Ticket->new($session{'CurrentUser'});
+$ticket->Load($id);
+
+my $whiteboard = $ticket->QueueObj->CustomField('Whiteboard');
+my $prefix  = "Object-RT::Ticket-".$ticket->Id."-CustomField-";
+
+my $Values = $ticket->CustomFieldValues($whiteboard->Id);
+my $comp = "/Elements/EditCustomField".$whiteboard->Type;
+
+</%init>
+<html><head>
+<link rel="stylesheet" 
+      href="<%$RT::WebPath%>/NoAuth/webrt.css" 
+      type="text/css" />
+</head>
+<body>
+<form action="<%$RT::WebPath%>/Ticket/Whiteboard.html" method="POST">
+<input type="hidden" name="id" value="<%$id%>">
+<&|/l&>Edit this ticket's whiteboard below:</&><br/>
+<& /Elements/EditCustomField,
+        Object => $ticket,
+        CustomField => $whiteboard,
+        NamePrefix => $prefix,
+        Cols=> 80,
+        Rows=> 5 
+&>
+<& /Elements/Submit &>                                
+</form>
+</body>
+</html>
+%$m->abort();
