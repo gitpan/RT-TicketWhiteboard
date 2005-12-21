@@ -21,3 +21,4 @@ MANIFEST.SKIP
 META.yml
 pm_to_blib
 README
+SIGNATURE                                Public-key signature (added by MakeMaker)

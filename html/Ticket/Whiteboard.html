@@ -20,6 +20,7 @@ my $comp = "/Elements/ShowCustomField".$whiteboard->Type;
       type="text/css" />
 </head>
 <body>
+% if ($whiteboard->id) {
 % while (my $Value = $Values->Next()) {
 % if ($m->comp_exists($comp)) {
 <& $comp, Object => $Value &>
@@ -30,6 +31,9 @@ my $comp = "/Elements/ShowCustomField".$whiteboard->Type;
 % if ($whiteboard->CurrentUserHasRight('ModifyCustomField')) {
 <hr/><a align="right" valign="bottom" href="<%$RT::WebPath%>/Ticket/EditWhiteboard.html?id=<%$ticket->id%>">Edit whiteboard...</a>
 %}
+% } else {
+No "Whiteboard" field for this ticket.
+% }
 </body>
 </html>
 %$m->abort();

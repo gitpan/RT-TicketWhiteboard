@@ -17,6 +17,8 @@
 %# END LICENSE BLOCK
 
 <%init>
+my $whiteboard = $Ticket->QueueObj->CustomField('Whiteboard');
+return unless ($whiteboard->id);
 </%init>
 <%args>
 $Ticket => undef

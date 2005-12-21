@@ -1,0 +1,46 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.50.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 9735b8c726be76491a404cfca4c2ed89dcb8aff5 Changes
+SHA1 18fb2b68025d27d95526ca17ddaf63c5c1448aaa MANIFEST
+SHA1 30836b582eef7a5592c64d0fd628ccef392dd02a MANIFEST.SKIP
+SHA1 b216fc73d9da0130d7b8c27738827b7b655f360b META.yml
+SHA1 3d0d6047b66fd964a75c9b6c3639f1782957631b Makefile
+SHA1 af93fac4feff47fb5b2448a4e01aa4cd86786ca4 Makefile.PL
+SHA1 a33d59b6542011e3f57ceb68884ac3ef56ec1be1 README
+SHA1 be668d487e90ce937d6d236bd62e6ecbff9c48ac html/Callbacks/RT-TicketWhiteboard/Elements/ShowCustomFields/MassageCustomFields
+SHA1 56f4974e1007ea2e3a6ace851334beabbd9aaac4 html/Callbacks/RT-TicketWhiteboard/Ticket/Display.html/BeforeShowHistory
+SHA1 be668d487e90ce937d6d236bd62e6ecbff9c48ac html/Callbacks/RT-TicketWhiteboard/Ticket/Elements/EditCustomFields/MassageCustomFields
+SHA1 5107570de1bc994534827b0ad39784c0e337a02a html/Ticket/EditWhiteboard.html
+SHA1 9e0128f47d1c925f5150d56b870b9552035007ad html/Ticket/Whiteboard.html
+SHA1 a9f121b0e3c03d44d940fe87d6045a5d939e3ebc inc/Module/Install.pm
+SHA1 29f06bef9943ab9b2138fec613ed1f36fd00f153 inc/Module/Install/Base.pm
+SHA1 40eb76fb84e20ebc3769c13715c81f6bdd927321 inc/Module/Install/Can.pm
+SHA1 a784ba7d2b096084b2ffed3a7d853e2847f4dedb inc/Module/Install/Fetch.pm
+SHA1 c4681684e7bf78a5ff82e909e07b87c42481de96 inc/Module/Install/Makefile.pm
+SHA1 3632291f1cc6d970a6e085319d1dba58fffcd2bf inc/Module/Install/Metadata.pm
+SHA1 e4d8f16d9f056bfa4f2952d64847b3c929e0cd26 inc/Module/Install/RTx.pm
+SHA1 2a1b494a7e5adaa3216e86d909dd5bf87d084c80 inc/Module/Install/Win32.pm
+SHA1 c92e1d32922615347e059e7e3a2f53b5e9c98e3b inc/Module/Install/WriteAll.pm
+SHA1 fdac1cd848eb08cf267a4debe7808c4f02be7f0b lib/RT/TicketWhiteboard.pm
+SHA1 da39a3ee5e6b4b0d3255bfef95601890afd80709 pm_to_blib
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDqa4jEi9d9xCOQEYRAkyWAKCkFlw6HtAB2sP20QXjtQOPY421ggCdEO2z
+BYg6mkLYwQdQCKbAcoEd92k=
+=7SHK
+-----END PGP SIGNATURE-----

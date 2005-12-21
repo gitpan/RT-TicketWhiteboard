@@ -1,5 +1,5 @@
 name: RT-TicketWhiteboard
-version: 1.0
+version: 1.2
 abstract: RT TicketWhiteboard Extension
 author: Jesse Vincent <jesse@bestpractical.com>
 license: GPL version 2
@@ -8,4 +8,4 @@ no_index:
   directory:
     - html
     - inc
-generated_by: Module::Install version 0.37
+generated_by: Module::Install version 0.41
