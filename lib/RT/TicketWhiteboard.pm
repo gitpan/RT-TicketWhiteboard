@@ -1,6 +1,8 @@
-
 package RT::TicketWhiteboard;
 
-our $VERSION = '1.2';
+use warnings;
+use strict;
+
+our $VERSION = '1.7';
 
 1;

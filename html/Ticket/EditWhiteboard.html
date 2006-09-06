@@ -17,8 +17,8 @@ my $comp = "/Elements/EditCustomField".$whiteboard->Type;
       href="<%$RT::WebPath%>/NoAuth/webrt.css" 
       type="text/css" />
 </head>
-<body>
-<form action="<%$RT::WebPath%>/Ticket/Whiteboard.html" method="POST">
+<body style="margin: 0; padding: 0;">
+<form action="<%$RT::WebPath%>/Ticket/Display.html" method="POST" style="margin: 0; padding: 0;">
 <input type="hidden" name="id" value="<%$id%>">
 <&|/l&>Edit this ticket's whiteboard below:</&><br/>
 <& /Elements/EditCustomField,

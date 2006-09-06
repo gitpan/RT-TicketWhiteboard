@@ -19,41 +19,39 @@
 #     NO_META => q[1]
 #     PL_FILES => {  }
 #     PREREQ_PM => {  }
-#     SIGN => q[1]
-#     VERSION => q[1.2]
+#     VERSION => q[1.7]
 #     dist => { PREOP=>q[$(PERL) -I. -MModule::Install::Admin -e "dist_preop(q($(DISTVNAME)))"] }
-#     test => { TESTS=>undef }
 
 # --- MakeMaker post_initialize section:
 
 
 # --- MakeMaker const_config section:
 
-# These definitions are from config.sh (via /usr/lib/perl/5.8/Config.pm)
+# These definitions are from config.sh (via /opt/local/lib/perl5/5.8.8/darwin-2level/Config.pm)
 
 # They may have been overridden via Makefile.PL or on the command line
 AR = ar
-CC = cc
-CCCDLFLAGS = -fPIC
-CCDLFLAGS = -Wl,-E
-DLEXT = so
+CC = /usr/bin/gcc-4.0
+CCCDLFLAGS =  
+CCDLFLAGS =  
+DLEXT = bundle
 DLSRC = dl_dlopen.xs
-LD = cc
-LDDLFLAGS = -shared -L/usr/local/lib
-LDFLAGS =  -L/usr/local/lib
-LIBC = /lib/libc-2.3.5.so
+LD = env MACOSX_DEPLOYMENT_TARGET=10.3 cc
+LDDLFLAGS = -L/opt/local/lib -bundle -undefined dynamic_lookup
+LDFLAGS = -L/opt/local/lib
+LIBC = /usr/lib/libc.dylib
 LIB_EXT = .a
 OBJ_EXT = .o
-OSNAME = linux
-OSVERS = 2.6.10
-RANLIB = :
-SITELIBEXP = /usr/local/share/perl/5.8.7
-SITEARCHEXP = /usr/local/lib/perl/5.8.7
-SO = so
+OSNAME = darwin
+OSVERS = 8.6.2
+RANLIB = ranlib
+SITELIBEXP = /opt/local/lib/perl5/site_perl/5.8.8
+SITEARCHEXP = /opt/local/lib/perl5/site_perl/5.8.8/darwin-2level
+SO = dylib
 EXE_EXT = 
 FULL_AR = /usr/bin/ar
-VENDORARCHEXP = /usr/lib/perl5
-VENDORLIBEXP = /usr/share/perl5
+VENDORARCHEXP = /opt/local/lib/perl5/vendor_perl/5.8.8/darwin-2level
+VENDORLIBEXP = /opt/local/lib/perl5/vendor_perl/5.8.8
 
 
 # --- MakeMaker constants section:
@@ -62,11 +60,11 @@ DIRFILESEP = /
 DFSEP = $(DIRFILESEP)
 NAME = RT::TicketWhiteboard
 NAME_SYM = RT_TicketWhiteboard
-VERSION = 1.2
+VERSION = 1.7
 VERSION_MACRO = VERSION
-VERSION_SYM = 1_2
+VERSION_SYM = 1_7
 DEFINE_VERSION = -D$(VERSION_MACRO)=\"$(VERSION)\"
-XS_VERSION = 1.2
+XS_VERSION = 1.7
 XS_VERSION_MACRO = XS_VERSION
 XS_DEFINE_VERSION = -D$(XS_VERSION_MACRO)=\"$(XS_VERSION)\"
 INST_ARCHLIB = blib/arch
@@ -75,56 +73,56 @@ INST_BIN = blib/bin
 INST_LIB = blib/lib
 INST_MAN1DIR = blib/man1
 INST_MAN3DIR = blib/man3
-MAN1EXT = 1p
-MAN3EXT = 3pm
+MAN1EXT = 1
+MAN3EXT = 3
 INSTALLDIRS = site
 DESTDIR = 
 PREFIX = $(SITEPREFIX)
-PERLPREFIX = /usr
-SITEPREFIX = /usr/local
-VENDORPREFIX = /usr
-INSTALLPRIVLIB = /usr/share/perl/5.8
+PERLPREFIX = /opt/local
+SITEPREFIX = /opt/local
+VENDORPREFIX = /opt/local
+INSTALLPRIVLIB = /opt/local/lib/perl5/5.8.8
 DESTINSTALLPRIVLIB = $(DESTDIR)$(INSTALLPRIVLIB)
 INSTALLSITELIB = /opt/rt3/local/lib
 DESTINSTALLSITELIB = $(DESTDIR)$(INSTALLSITELIB)
-INSTALLVENDORLIB = /usr/share/perl5
+INSTALLVENDORLIB = /opt/local/lib/perl5/vendor_perl/5.8.8
 DESTINSTALLVENDORLIB = $(DESTDIR)$(INSTALLVENDORLIB)
-INSTALLARCHLIB = /usr/lib/perl/5.8
+INSTALLARCHLIB = /opt/local/lib/perl5/5.8.8/darwin-2level
 DESTINSTALLARCHLIB = $(DESTDIR)$(INSTALLARCHLIB)
-INSTALLSITEARCH = /usr/local/lib/perl/5.8.7
+INSTALLSITEARCH = /opt/local/lib/perl5/site_perl/5.8.8/darwin-2level
 DESTINSTALLSITEARCH = $(DESTDIR)$(INSTALLSITEARCH)
-INSTALLVENDORARCH = /usr/lib/perl5
+INSTALLVENDORARCH = /opt/local/lib/perl5/vendor_perl/5.8.8/darwin-2level
 DESTINSTALLVENDORARCH = $(DESTDIR)$(INSTALLVENDORARCH)
-INSTALLBIN = /usr/bin
+INSTALLBIN = /opt/local/bin
 DESTINSTALLBIN = $(DESTDIR)$(INSTALLBIN)
-INSTALLSITEBIN = /usr/local/bin
+INSTALLSITEBIN = /opt/local/bin
 DESTINSTALLSITEBIN = $(DESTDIR)$(INSTALLSITEBIN)
-INSTALLVENDORBIN = /usr/bin
+INSTALLVENDORBIN = /opt/local/bin
 DESTINSTALLVENDORBIN = $(DESTDIR)$(INSTALLVENDORBIN)
-INSTALLSCRIPT = /usr/bin
+INSTALLSCRIPT = /opt/local/bin
 DESTINSTALLSCRIPT = $(DESTDIR)$(INSTALLSCRIPT)
-INSTALLMAN1DIR = /usr/share/man/man1
+INSTALLMAN1DIR = /opt/local/share/man/man1
 DESTINSTALLMAN1DIR = $(DESTDIR)$(INSTALLMAN1DIR)
-INSTALLSITEMAN1DIR = /usr/local/man/man1
+INSTALLSITEMAN1DIR = /opt/local/share/man/man1
 DESTINSTALLSITEMAN1DIR = $(DESTDIR)$(INSTALLSITEMAN1DIR)
-INSTALLVENDORMAN1DIR = /usr/share/man/man1
+INSTALLVENDORMAN1DIR = /opt/local/share/man/man1
 DESTINSTALLVENDORMAN1DIR = $(DESTDIR)$(INSTALLVENDORMAN1DIR)
-INSTALLMAN3DIR = /usr/share/man/man3
+INSTALLMAN3DIR = /opt/local/share/man/man3
 DESTINSTALLMAN3DIR = $(DESTDIR)$(INSTALLMAN3DIR)
-INSTALLSITEMAN3DIR = /usr/local/man/man3
+INSTALLSITEMAN3DIR = /opt/local/share/man/man3
 DESTINSTALLSITEMAN3DIR = $(DESTDIR)$(INSTALLSITEMAN3DIR)
-INSTALLVENDORMAN3DIR = /usr/share/man/man3
+INSTALLVENDORMAN3DIR = /opt/local/share/man/man3
 DESTINSTALLVENDORMAN3DIR = $(DESTDIR)$(INSTALLVENDORMAN3DIR)
-PERL_LIB = /usr/share/perl/5.8
-PERL_ARCHLIB = /usr/lib/perl/5.8
+PERL_LIB =
+PERL_ARCHLIB = /opt/local/lib/perl5/5.8.8/darwin-2level
 LIBPERL_A = libperl.a
 FIRST_MAKEFILE = Makefile
 MAKEFILE_OLD = Makefile.old
 MAKE_APERL_FILE = Makefile.aperl
 PERLMAINCC = $(CC)
-PERL_INC = /usr/lib/perl/5.8/CORE
-PERL = /usr/bin/perl -Iinc
-FULLPERL = /usr/bin/perl -Iinc
+PERL_INC = /opt/local/lib/perl5/5.8.8/darwin-2level/CORE
+PERL = /opt/local/bin/perl "-Iinc"
+FULLPERL = /opt/local/bin/perl "-Iinc"
 ABSPERL = $(PERL)
 PERLRUN = $(PERL)
 FULLPERLRUN = $(FULLPERL)
@@ -136,7 +134,7 @@ PERL_CORE = 0
 PERM_RW = 644
 PERM_RWX = 755
 
-MAKEMAKER   = /usr/local/share/perl/5.8.7/ExtUtils/MakeMaker.pm
+MAKEMAKER   = /opt/local/lib/perl5/5.8.8/ExtUtils/MakeMaker.pm
 MM_VERSION  = 6.30
 MM_REVISION = Revision: 4535 
 
@@ -252,7 +250,7 @@ RCS_LABEL = rcs -Nv$(VERSION_SYM): -q
 DIST_CP = best
 DIST_DEFAULT = tardist
 DISTNAME = RT-TicketWhiteboard
-DISTVNAME = RT-TicketWhiteboard-1.2
+DISTVNAME = RT-TicketWhiteboard-1.7
 
 
 # --- MakeMaker macro section:
@@ -536,7 +534,7 @@ create_distdir :
 	$(PERLRUN) "-MExtUtils::Manifest=manicopy,maniread" \
 		-e "manicopy(maniread(),'$(DISTVNAME)', '$(DIST_CP)');"
 
-distdir : create_distdir  distsignature
+distdir : create_distdir  
 	$(NOECHO) $(NOOP)
 
 
@@ -714,7 +712,7 @@ $(FIRST_MAKEFILE) : Makefile.PL $(CONFIGDEP)
 
 # --- MakeMaker makeaperl section ---
 MAP_TARGET    = perl
-FULLPERL      = /usr/bin/perl
+FULLPERL      = /opt/local/bin/perl
 
 $(MAP_TARGET) :: static $(MAKE_APERL_FILE)
 	$(MAKE) $(USEMAKEFILE) $(MAKE_APERL_FILE) $@
@@ -754,13 +752,13 @@ testdb_static :: testdb_dynamic
 # --- MakeMaker ppd section:
 # Creates a PPD (Perl Package Description) for a binary distribution.
 ppd:
-	$(NOECHO) $(ECHO) '<SOFTPKG NAME="$(DISTNAME)" VERSION="1,2,0,0">' > $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '<SOFTPKG NAME="$(DISTNAME)" VERSION="1,7,0,0">' > $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <TITLE>$(DISTNAME)</TITLE>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <ABSTRACT>RT TicketWhiteboard Extension</ABSTRACT>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <AUTHOR>Jesse Vincent &lt;jesse@bestpractical.com&gt;</AUTHOR>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <IMPLEMENTATION>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <OS NAME="$(OSNAME)" />' >> $(DISTNAME).ppd
-	$(NOECHO) $(ECHO) '        <ARCHITECTURE NAME="i486-linux-gnu-thread-multi" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <ARCHITECTURE NAME="darwin-2level" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <CODEBASE HREF="" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    </IMPLEMENTATION>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '</SOFTPKG>' >> $(DISTNAME).ppd
@@ -781,7 +779,7 @@ pm_to_blib : $(TO_INST_PM)
 
 
 # End.
-# Postamble by Module::Install 0.41
+# Postamble by Module::Install 0.63
 # --- Module::Install::Admin::Makefile section:
 
 realclean purge ::

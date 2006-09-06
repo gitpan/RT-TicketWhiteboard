@@ -14,13 +14,24 @@ my $Values = $ticket->CustomFieldValues($whiteboard->Id);
 my $comp = "/Elements/ShowCustomField".$whiteboard->Type;
 
 </%init>
-<html><head>
-<link rel="stylesheet" 
-      href="<%$RT::WebPath%>/NoAuth/webrt.css" 
-      type="text/css" />
-</head>
-<body>
+
+% if ($whiteboard->CurrentUserHasRight('ModifyCustomField')) {
+<a align="right" valign="bottom" href="<%$RT::WebPath%>/Ticket/EditWhiteboard.html?id=<%$ticket->id%>" onClick="ahah('<%$RT::WebPath%>/Ticket/EditWhiteboard.html?id=<%$ticket->id%>', 'whiteboard'); return false;" >[<&|/l&>Edit</&>]</a>
+<span id="showall" ><a href="#" onClick="var wb = document.getElementById('whiteboardinner'); 
+    wb.style.overflow = 'visible';  
+    wb.style.height = 'auto'; 
+    document.getElementById('showsome').style.display='inline';  
+    document.getElementById('showall').style.display='none'; 
+    return false;" >[<&|/l&>Expand</&>]</a></span>
+<span id="showsome" style="display: none;"><a href="#" onClick="var wb = document.getElementById('whiteboardinner'); 
+    wb.style.overflow = 'hidden';  
+    wb.style.height = '6em'; 
+    document.getElementById('showall').style.display='inline';  
+    document.getElementById('showsome').style.display='none'; 
+    return false;" >[<&|/l&>Collapse</&>]</a></span>
+%}
 % if ($whiteboard->id) {
+<div id="whiteboardinner" style="overflow: hidden; height: 6em;">
 % while (my $Value = $Values->Next()) {
 % if ($m->comp_exists($comp)) {
 <& $comp, Object => $Value &>
@@ -28,12 +39,8 @@ my $comp = "/Elements/ShowCustomField".$whiteboard->Type;
 <% $Value->Content %>
 % }
 % }
-% if ($whiteboard->CurrentUserHasRight('ModifyCustomField')) {
-<hr/><a align="right" valign="bottom" href="<%$RT::WebPath%>/Ticket/EditWhiteboard.html?id=<%$ticket->id%>">Edit whiteboard...</a>
-%}
 % } else {
-No "Whiteboard" field for this ticket.
+<&|/l&>No "Whiteboard" field for this ticket.</&>
 % }
-</body>
-</html>
+</div>
 %$m->abort();

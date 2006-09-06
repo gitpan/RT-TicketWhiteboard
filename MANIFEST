@@ -1,7 +1,10 @@
 Changes
 html/Callbacks/RT-TicketWhiteboard/Elements/ShowCustomFields/MassageCustomFields
+html/Callbacks/RT-TicketWhiteboard/Ticket/Display.html/BeforeDisplay
 html/Callbacks/RT-TicketWhiteboard/Ticket/Display.html/BeforeShowHistory
 html/Callbacks/RT-TicketWhiteboard/Ticket/Elements/EditCustomFields/MassageCustomFields
+html/Callbacks/RT-TicketWhiteboard/Ticket/Elements/ShowHistory/SkipTransaction
+html/Ticket/ahah.js
 html/Ticket/EditWhiteboard.html
 html/Ticket/Whiteboard.html
 inc/Module/Install.pm
@@ -19,6 +22,5 @@ Makefile.PL
 MANIFEST			This list of files
 MANIFEST.SKIP
 META.yml
-pm_to_blib
 README
-SIGNATURE                                Public-key signature (added by MakeMaker)
+SIGNATURE

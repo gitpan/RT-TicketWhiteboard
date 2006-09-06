@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.50.
+signed via the Module::Signature module, version 0.54.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,33 +14,35 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 9735b8c726be76491a404cfca4c2ed89dcb8aff5 Changes
-SHA1 18fb2b68025d27d95526ca17ddaf63c5c1448aaa MANIFEST
+SHA1 da80d13ad9b044095dcf85b2881d4a86c5b3bb34 Changes
+SHA1 ccd365741c628e6b04f6e8ff048c5030a28e521c MANIFEST
 SHA1 30836b582eef7a5592c64d0fd628ccef392dd02a MANIFEST.SKIP
-SHA1 b216fc73d9da0130d7b8c27738827b7b655f360b META.yml
-SHA1 3d0d6047b66fd964a75c9b6c3639f1782957631b Makefile
+SHA1 59b487f62b2a2d7cff71b428babd076c5a893a7a META.yml
+SHA1 5c9b07c8ba193734abec33f1521330e1fdcd9b8b Makefile
 SHA1 af93fac4feff47fb5b2448a4e01aa4cd86786ca4 Makefile.PL
 SHA1 a33d59b6542011e3f57ceb68884ac3ef56ec1be1 README
 SHA1 be668d487e90ce937d6d236bd62e6ecbff9c48ac html/Callbacks/RT-TicketWhiteboard/Elements/ShowCustomFields/MassageCustomFields
-SHA1 56f4974e1007ea2e3a6ace851334beabbd9aaac4 html/Callbacks/RT-TicketWhiteboard/Ticket/Display.html/BeforeShowHistory
+SHA1 f1c81b96eb96ed1096817b9047c943ef552c0a27 html/Callbacks/RT-TicketWhiteboard/Ticket/Display.html/BeforeDisplay
+SHA1 db33819ec6f77155ba51cd29611a83d1e887e7dd html/Callbacks/RT-TicketWhiteboard/Ticket/Display.html/BeforeShowHistory
 SHA1 be668d487e90ce937d6d236bd62e6ecbff9c48ac html/Callbacks/RT-TicketWhiteboard/Ticket/Elements/EditCustomFields/MassageCustomFields
-SHA1 5107570de1bc994534827b0ad39784c0e337a02a html/Ticket/EditWhiteboard.html
-SHA1 9e0128f47d1c925f5150d56b870b9552035007ad html/Ticket/Whiteboard.html
-SHA1 a9f121b0e3c03d44d940fe87d6045a5d939e3ebc inc/Module/Install.pm
-SHA1 29f06bef9943ab9b2138fec613ed1f36fd00f153 inc/Module/Install/Base.pm
-SHA1 40eb76fb84e20ebc3769c13715c81f6bdd927321 inc/Module/Install/Can.pm
-SHA1 a784ba7d2b096084b2ffed3a7d853e2847f4dedb inc/Module/Install/Fetch.pm
-SHA1 c4681684e7bf78a5ff82e909e07b87c42481de96 inc/Module/Install/Makefile.pm
-SHA1 3632291f1cc6d970a6e085319d1dba58fffcd2bf inc/Module/Install/Metadata.pm
-SHA1 e4d8f16d9f056bfa4f2952d64847b3c929e0cd26 inc/Module/Install/RTx.pm
-SHA1 2a1b494a7e5adaa3216e86d909dd5bf87d084c80 inc/Module/Install/Win32.pm
-SHA1 c92e1d32922615347e059e7e3a2f53b5e9c98e3b inc/Module/Install/WriteAll.pm
-SHA1 fdac1cd848eb08cf267a4debe7808c4f02be7f0b lib/RT/TicketWhiteboard.pm
-SHA1 da39a3ee5e6b4b0d3255bfef95601890afd80709 pm_to_blib
+SHA1 ede082564b3284a9082139c22da03cb199a5e877 html/Callbacks/RT-TicketWhiteboard/Ticket/Elements/ShowHistory/SkipTransaction
+SHA1 919fe67fac480422477b8493dd1366086a11dabc html/Ticket/EditWhiteboard.html
+SHA1 4a6608a8e029974ec79ad1013847ed1616c09df5 html/Ticket/Whiteboard.html
+SHA1 dbb0551793594b851f3d36159ed348ae9a4032da html/Ticket/ahah.js
+SHA1 017bedfcba1e0c72b36301e6ef21b8712b84d175 inc/Module/Install.pm
+SHA1 b1a70869c098ba602151631386fc510b5bfd3511 inc/Module/Install/Base.pm
+SHA1 dd7313db23119d49ae78593bfa576554fb5b0fd8 inc/Module/Install/Can.pm
+SHA1 7c3a5153a5574556d895f23e121a41e680da11c1 inc/Module/Install/Fetch.pm
+SHA1 176d68fe7c07b6ab7cfe09093078b8127bbde786 inc/Module/Install/Makefile.pm
+SHA1 8b37b38215d14f922b3d5132ce33d11d21d531ba inc/Module/Install/Metadata.pm
+SHA1 f7ca5510f60edc6a3ca479b8cbd23d89e9d15974 inc/Module/Install/RTx.pm
+SHA1 7eb44b00058c44795038d7fa4c0c77470f20a7f8 inc/Module/Install/Win32.pm
+SHA1 6d05967a5e1680b5f118315aaa6b8a1e143d79d8 inc/Module/Install/WriteAll.pm
+SHA1 22792200a82161f6ceeb4a228caf18a2a09f0272 lib/RT/TicketWhiteboard.pm
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
+Version: GnuPG v1.4.3 (Darwin)
 
-iD8DBQFDqa4jEi9d9xCOQEYRAkyWAKCkFlw6HtAB2sP20QXjtQOPY421ggCdEO2z
-BYg6mkLYwQdQCKbAcoEd92k=
-=7SHK
+iD8DBQFE/wCbEi9d9xCOQEYRAuQxAJ9e2Jd5HSjfBd2U5hF0VB//lGh7xwCeMal9
+t/afKpwdyG/oeWG836/LxFk=
+=lTbx
 -----END PGP SIGNATURE-----

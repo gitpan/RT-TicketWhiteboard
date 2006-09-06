@@ -23,13 +23,13 @@ return unless ($whiteboard->id);
 <%args>
 $Ticket => undef
 </%args>
-<div align="center">
-<&|/Elements/TitleBox, title => 'Status whiteboard'&>
-<iframe src="<%$RT::WebPath%>/Ticket/Whiteboard.html?id=<%$Ticket->id%>" width="100%">
-<a href="<%$RT::WebPath%>/Ticket/Whiteboard.html"><&|/l&>Status whiteboard</&></a>
-</iframe>
+<script src="<%$RT::WebPath%>/Ticket/ahah.js"></script>
+<&|/Widgets/TitleBox, title => 'Status whiteboard'&>
+<div id="whiteboard"></div>
+<script>
+ahah( '<%$RT::WebPath%>/Ticket/Whiteboard.html?id=<%$Ticket->id%>', 'whiteboard')
+</script>
 </&>
-</div>
 <br />
 <br />
 
